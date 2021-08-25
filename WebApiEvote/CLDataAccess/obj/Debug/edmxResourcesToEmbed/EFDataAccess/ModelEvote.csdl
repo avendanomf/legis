@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_EvoteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Candidatos">
+    <Key>
+      <PropertyRef Name="id_candidato" />
+    </Key>
+    <Property Name="id_candidato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo_electronico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_documento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="numero_documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Propuestas" Relationship="Self.FK_Propuestas_Candidatos" FromRole="Candidatos" ToRole="Propuestas" />
+  </EntityType>
+  <EntityType Name="Propuestas">
+    <Key>
+      <PropertyRef Name="id_propuesta" />
+    </Key>
+    <Property Name="id_propuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_candidato" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Candidatos" Relationship="Self.FK_Propuestas_Candidatos" FromRole="Propuestas" ToRole="Candidatos" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Propuestas_Candidatos">
+    <End Role="Candidatos" Type="Self.Candidatos" Multiplicity="1" />
+    <End Role="Propuestas" Type="Self.Propuestas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidatos">
+        <PropertyRef Name="id_candidato" />
+      </Principal>
+      <Dependent Role="Propuestas">
+        <PropertyRef Name="id_candidato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_EvoteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Candidatos" EntityType="Self.Candidatos" />
+    <EntitySet Name="Propuestas" EntityType="Self.Propuestas" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Propuestas_Candidatos" Association="Self.FK_Propuestas_Candidatos">
+      <End Role="Candidatos" EntitySet="Candidatos" />
+      <End Role="Propuestas" EntitySet="Propuestas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

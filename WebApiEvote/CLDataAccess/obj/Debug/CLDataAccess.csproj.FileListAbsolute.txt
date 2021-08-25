@@ -1,0 +1,16 @@
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\CLDataAccess.dll.config
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\CLDataAccess.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\CLDataAccess.pdb
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\AutoMapper.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\CLEntities.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\EntityFramework.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\CLEntities.pdb
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\AutoMapper.xml
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\EntityFramework.xml
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\obj\Debug\CLDataAccess.csprojAssemblyReference.cache
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\obj\Debug\CLDataAccess.csproj.CoreCompileInputs.cache
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\obj\Debug\CLDataAccess.csproj.CopyComplete
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\obj\Debug\CLDataAccess.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLDataAccess\obj\Debug\CLDataAccess.pdb

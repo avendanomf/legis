@@ -1,0 +1,5 @@
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLEntities\bin\Debug\CLEntities.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLEntities\bin\Debug\CLEntities.pdb
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLEntities\obj\Debug\CLEntities.csproj.CoreCompileInputs.cache
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLEntities\obj\Debug\CLEntities.dll
+D:\mfab\PruebasTecnicas\Legis\WebApiEvote\CLEntities\obj\Debug\CLEntities.pdb

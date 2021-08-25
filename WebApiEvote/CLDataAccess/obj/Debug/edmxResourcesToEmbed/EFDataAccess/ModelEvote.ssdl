@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_EvoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Candidatos">
+    <Key>
+      <PropertyRef Name="id_candidato" />
+    </Key>
+    <Property Name="id_candidato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correo_electronico" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo_documento" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="numero_documento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="foto" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Propuestas">
+    <Key>
+      <PropertyRef Name="id_propuesta" />
+    </Key>
+    <Property Name="id_propuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_candidato" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Propuestas_Candidatos">
+    <End Role="Candidatos" Type="Self.Candidatos" Multiplicity="1" />
+    <End Role="Propuestas" Type="Self.Propuestas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidatos">
+        <PropertyRef Name="id_candidato" />
+      </Principal>
+      <Dependent Role="Propuestas">
+        <PropertyRef Name="id_candidato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_EvoteModelStoreContainer">
+    <EntitySet Name="Candidatos" EntityType="Self.Candidatos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Propuestas" EntityType="Self.Propuestas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Propuestas_Candidatos" Association="Self.FK_Propuestas_Candidatos">
+      <End Role="Candidatos" EntitySet="Candidatos" />
+      <End Role="Propuestas" EntitySet="Propuestas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
